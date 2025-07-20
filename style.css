@@ -886,3 +886,19 @@ footer {
         padding: 40px 0;
     }
 }
+.token-card,
+.service-card,
+.paquete,
+.intro-box,
+.usage-item {
+    border: 4px solid #0E4D92;
+    transition: all 0.3s ease;
+}
+
+.token-card:hover,
+.service-card:hover,
+.paquete:hover,
+.intro-box:hover,
+.usage-item:hover {
+    border: 4px solid #25D366;
+}
