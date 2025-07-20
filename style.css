@@ -886,3 +886,13 @@ footer {
         padding: 40px 0;
     }
 }
+.intro-box {
+    border-left: 4px solid #0E4D92;
+    border-top: 4px solid #0E4D92;
+    transition: all 0.3s ease;
+}
+
+.intro-box:hover {
+    border-left: 4px solid #25D366;
+    border-top: 4px solid #25D366;
+}
