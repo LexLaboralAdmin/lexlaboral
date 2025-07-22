@@ -17,7 +17,8 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <!-- Se eliminó el enlace a tokens.css para evitar conflictos -->
+    <!-- Se restauró la conexión al archivo tokens.css -->
+    <link rel="stylesheet" href="tokens.css">
 </head>
 <body>
     <!-- Header -->
@@ -183,7 +184,7 @@
     <!-- Ventajas Adicionales -->
     <section class="intro-section">
         <div class="container">
-            <div class="intro-box fade-in">
+            <div class="intro-box fade-in" style="margin-bottom: 0;">
                 <h2>Ventajas del Sistema por Tokens</h2>
                 <p><strong>Sin contratos anuales:</strong> Compras tokens cuando los necesitas, sin atarte a mensualidades fijas.</p>
                 <p><strong>Transparencia total:</strong> Sabes exactamente cuántos tokens cuesta cada servicio antes de solicitarlo.</p>
@@ -192,8 +193,8 @@
             </div>
             
             <!-- Botón de Paquetes -->
-            <!-- Se corrigió la estructura HTML y se usó un margen negativo para un mejor diseño -->
-            <div style="text-align: center; margin-top: -25px; position: relative; z-index: 2; padding-bottom: 40px;">
+            <!-- Se ajustó el espaciado de una manera más limpia para evitar solapamientos -->
+            <div style="text-align: center; margin-top: 20px; padding-bottom: 40px;">
                 <a href="paquetes.html" class="cta-btn">
                     Ver Paquetes
                 </a>
