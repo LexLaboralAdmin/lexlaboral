@@ -678,7 +678,7 @@ footer {
 
 .footer-content {
     display: grid;
-    /* CAMBIO CLAVE: Usa auto-fit con un minmax flexible para escritorio */
+    /* Usa auto-fit con un minmax flexible para escritorio */
     /* Esto permite que las columnas se ajusten y crezcan para llenar el espacio */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem; /* Espacio entre los elementos de la cuadrícula */
@@ -693,7 +693,7 @@ footer {
 
 /* Asegura que el texto de las secciones individuales esté alineado como se desea */
 .footer-section {
-    text-align: left; /* Por defecto, hereda del centro del footer. Establecido explícitamente a la izquierda para el contenido de las secciones. */
+    text-align: center; /* CAMBIO CLAVE: Centra el texto dentro de cada sección del footer */
     padding: 0 10px; /* Añade un poco de padding interno para evitar que el texto toque los bordes */
 }
 
