@@ -678,24 +678,22 @@ footer {
 
 .footer-content {
     display: grid;
-    /* Usa auto-fit con minmax para que las columnas se ajusten flexiblemente */
-    /* Mínimo de 280px para cada columna, y 1fr para que crezcan y llenen el espacio */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* CAMBIO CLAVE: Fuerza 3 columnas de igual ancho para escritorio */
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem; /* Espacio entre los elementos de la cuadrícula */
     margin-bottom: 2rem;
     position: relative;
     z-index: 2;
 
-    /* Elimina el max-width fijo aquí para que ocupe todo el ancho del .container */
-    /* max-width: 960px; */ /* Eliminado */
-    /* Centra los elementos del grid dentro del espacio disponible si no lo llenan completamente */
+    /* Centra el grid si hay espacio extra, aunque con 3, 1fr debería llenar el contenedor */
     justify-content: center;
-    /* align-items: start; */ /* No es estrictamente necesario si el contenido es de altura similar */
+    align-items: start; /* Alinea los elementos al inicio de su celda de cuadrícula verticalmente */
 }
 
 /* Asegura que el texto de las secciones individuales esté alineado como se desea */
 .footer-section {
     text-align: left; /* Por defecto, hereda del centro del footer. Establecido explícitamente a la izquierda para el contenido de las secciones. */
+    padding: 0 10px; /* Añade un poco de padding interno para evitar que el texto toque los bordes */
 }
 
 .footer-section h3 {
@@ -730,12 +728,13 @@ footer .container > p { /* Dirige el párrafo directamente dentro del contenedor
         /* En pantallas más pequeñas, apila las secciones en una sola columna */
         grid-template-columns: 1fr;
         /* Asegura que ocupe el 100% del ancho disponible en móvil */
-        max-width: 100%;
+        max-width: 100%; /* Asegura que ocupe el ancho completo del contenedor en móvil */
         text-align: center; /* Centra el contenido en las secciones apiladas si se desea */
     }
 
     .footer-section {
         text-align: center; /* Centra el contenido dentro de cada sección cuando están apiladas */
+        padding: 0; /* Elimina el padding horizontal extra en móvil si no es necesario */
     }
 }
 
