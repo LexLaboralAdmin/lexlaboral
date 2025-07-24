@@ -678,14 +678,15 @@ footer {
 
 .footer-content {
     display: grid;
-    /* CAMBIO CLAVE: Fuerza 3 columnas de igual ancho para escritorio */
-    grid-template-columns: repeat(3, 1fr);
+    /* CAMBIO CLAVE: Usa auto-fit con un minmax flexible para escritorio */
+    /* Esto permite que las columnas se ajusten y crezcan para llenar el espacio */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem; /* Espacio entre los elementos de la cuadrícula */
     margin-bottom: 2rem;
     position: relative;
     z-index: 2;
 
-    /* Centra el grid si hay espacio extra, aunque con 3, 1fr debería llenar el contenedor */
+    /* Centra el grid si hay espacio extra dentro del .container */
     justify-content: center;
     align-items: start; /* Alinea los elementos al inicio de su celda de cuadrícula verticalmente */
 }
