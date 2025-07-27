@@ -6,7 +6,8 @@
 }
 
 html, body {
-    background: #ffffff !important;
+    /* Eliminado !important para permitir que otros CSS sobrescriban el fondo del body si es necesario */
+    background: #ffffff; 
     color: #333;
     margin: 0;
     padding: 0;
@@ -93,6 +94,7 @@ nav {
 
 .hero-logo-text {
     display: flex;
+    flex-direction: column; /* Cambiado a column para mejor responsividad por defecto */
     align-items: center;
     justify-content: center;
     gap: 0.3rem;
@@ -137,7 +139,7 @@ nav {
 
 /* MENÚ HAMBURGUESA CORREGIDO */
 .nav-links {
-    display: none;
+    display: none; /* Se controla con JS */
     flex-direction: column;
     gap: 0.5rem;
     position: absolute;
@@ -182,7 +184,7 @@ nav {
 .nav-links.show {
     max-height: 300px;
     opacity: 1;
-    display: flex;
+    display: flex; /* Cambiado a flex para mostrar */
     pointer-events: auto;
 }
 
@@ -231,12 +233,8 @@ nav {
 
 /* Hero Section (Default for pages like index.html) */
 .hero {
-    background: linear-gradient(
-        135deg,
-        rgba(14, 77, 146, 0.50) 0%,
-        rgba(26, 91, 168, 0.50) 100%
-    ),
-    url('index-page.jpeg') center/cover no-repeat; /* Imagen por defecto para el hero */
+    /* Usar un background más genérico para el hero por defecto */
+    background: linear-gradient(135deg, #0E4D92 0%, #1a5ba8 100%);
     color: white;
     padding: 85px 0 50px;
     text-align: center;
@@ -840,4 +838,49 @@ footer .container > p { /* Dirige el párrafo directamente dentro del contenedor
 .intro-box:hover {
     border-left: 4px solid #25D366;
     border-top: 4px solid #25D366;
+}
+
+/* Animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(2deg); }
+}
+
+@keyframes slideInDown {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeSlideDown {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes pulseEffect {
+    0% { box-shadow: 0 0 0 0 rgba(14, 77, 146, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(14, 77, 146, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(14, 77, 146, 0); }
+}
+
+/* Fade In Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
