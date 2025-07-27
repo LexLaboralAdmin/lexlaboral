@@ -25,14 +25,121 @@
 
     <title>Contacto - LexLaboral</title>
 
-    <!-- Fuentes y CSS -->
+    <!-- Fuentes y CSS principales del sitio -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="tokens.css">
-    <!-- Enlace al archivo CSS específico de esta página (debe ser el último para sobrescribir) -->
-    <link rel="stylesheet" href="contacto.css">
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- CSS ESPECÍFICO DE ESTA PÁGINA (EMBEBIDO PARA GARANTIZAR APLICACIÓN) -->
+    <style>
+        /* Asegura que el cuerpo use la fuente Inter para esta página y el fondo claro */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Un gris claro para el fondo */
+            color: #333; /* Color de texto general */
+        }
+
+        /* Estilos para la sección Hero específicos de esta página */
+        .hero {
+            /* Sobrescribe completamente la propiedad background para asegurar la imagen correcta */
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('contacto-page.jpg') center/cover no-repeat;
+            color: white; /* Texto blanco sobre la imagen */
+            padding: 4rem 1rem; /* Padding para el contenido del hero */
+            text-align: center; /* Centrar el texto del hero */
+            position: relative;
+            overflow: hidden;
+            min-height: 300px; /* Altura mínima para el hero */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Estilos para el contenedor del formulario */
+        .form-container {
+            max-width: 100%; /* Ancho fluido para responsividad */
+            padding: 1.5rem; /* Padding base */
+            margin: 2rem auto; /* Centrar el contenedor y darle margen superior/inferior */
+            background-color: #ffffff; /* Fondo blanco para el formulario */
+            border-radius: 1rem; /* Bordes redondeados */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra suave */
+        }
+
+        /* Media query para pantallas medianas y grandes del formulario */
+        @media (min-width: 768px) {
+            .form-container {
+                max-width: 768px; /* Ancho máximo para pantallas de escritorio */
+                padding: 2.5rem; /* Más padding en pantallas grandes */
+            }
+        }
+
+        /* Estilos para los campos de entrada */
+        .input-field {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #cbd5e0; /* Color de borde gris */
+            border-radius: 0.5rem; /* Bordes redondeados */
+            font-size: 1rem;
+            color: #333; /* Color del texto dentro del input */
+            outline: none; /* Quitar el contorno al enfocar */
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .input-field:focus {
+            border-color: #0056b3; /* Azul de LexLaboral al enfocar */
+            box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.2); /* Sombra suave al enfocar */
+        }
+
+        /* Estilos para el botón de envío */
+        .submit-button {
+            background-color: #0056b3; /* Azul de LexLaboral */
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 0.75rem; /* Bordes más redondeados */
+            font-weight: 600;
+            font-size: 1.125rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background-color: #004494; /* Azul más oscuro al pasar el mouse */
+            transform: translateY(-2px); /* Pequeño efecto de elevación */
+        }
+
+        .submit-button:active {
+            transform: translateY(0); /* Quitar efecto al hacer click */
+        }
+
+        /* Asegura que el contenido principal tenga padding */
+        main {
+            padding-top: 2rem; /* Espacio desde el hero */
+            padding-bottom: 2rem; /* Espacio antes del CTA */
+        }
+
+        /* Mobile Responsiveness (ajustes específicos para esta página) */
+        @media (max-width: 768px) {
+            .hero-logo-text h1 {
+                font-size: 1.8rem;
+            }
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            .hero-description {
+                font-size: 0.9rem;
+            }
+            .form-container {
+                padding: 1rem;
+                margin: 1rem auto; /* Ajuste de margen en móvil */
+            }
+            .submit-button {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header - Extraído de tokens.html -->
