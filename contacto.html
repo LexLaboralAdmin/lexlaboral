@@ -32,9 +32,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Tus archivos CSS personalizados (cargados DESPUÉS de Tailwind) -->
+    <!-- Tus archivos CSS personalizados (cargados DESPUÉS de Tailwind y en orden de especificidad) -->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="contacto.css"> <!-- Este debe ser el ÚLTIMO para estilos específicos -->
+    <link rel="stylesheet" href="tokens.css"> <!-- Si tokens.css tiene estilos generales, debe ir antes de contacto.css -->
+    <link rel="stylesheet" href="contacto.css"> <!-- Este debe ser el ÚLTIMO para estilos específicos de esta página -->
 </head>
 <body>
     <!-- Header -->
