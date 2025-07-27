@@ -10,7 +10,7 @@ html, body {
     color: #333;
     margin: 0;
     padding: 0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif; /* Fuente principal para todo el sitio */
     font-size: 15px;
     overflow-x: hidden;
     max-width: 100%;
@@ -78,6 +78,7 @@ nav {
     fill: white;
 }
 
+/* Estilos generales para el texto y logo del Hero */
 .hero-logo-text svg {
     fill: white;
     filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
@@ -85,7 +86,42 @@ nav {
 
 .hero-logo-text img {
     filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+    height: 160px; /* Tamaño por defecto para hero logo */
+    width: auto;
+    transform: translateY(10px);
 }
+
+.hero-logo-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    margin-bottom: 1.5rem;
+    animation: fadeSlideDown 1s ease-in-out forwards;
+}
+
+.hero-logo-text h1 {
+    font-size: 2.5rem; /* Tamaño por defecto para hero h1 */
+    margin: 0;
+    font-weight: bold;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem; /* Tamaño por defecto para hero subtitle */
+    margin-bottom: 1rem;
+    opacity: 0.9;
+    animation: slideInUp 1s ease-out 0.3s both;
+}
+
+.hero-description {
+    font-size: 1rem; /* Tamaño por defecto para hero description */
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.8;
+}
+
 
 .menu-toggle {
     display: block;
@@ -193,9 +229,14 @@ nav {
     transform: translateY(-22.5px) rotate(-45deg);
 }
 
-/* Hero Section */
+/* Hero Section (Default for pages like index.html) */
 .hero {
-    background: linear-gradient(135deg, #0E4D92 0%, #1a5ba8 100%);
+    background: linear-gradient(
+        135deg,
+        rgba(14, 77, 146, 0.50) 0%,
+        rgba(26, 91, 168, 0.50) 100%
+    ),
+    url('index-page.jpeg') center/cover no-repeat; /* Imagen por defecto para el hero */
     color: white;
     padding: 85px 0 50px;
     text-align: center;
@@ -206,43 +247,6 @@ nav {
 .hero-content {
     position: relative;
     z-index: 2;
-}
-
-.hero-logo-text img {
-    height: 160px;
-    width: auto;
-    transform: translateY(10px);
-}
-
-.hero-logo-text {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.3rem;
-    margin-bottom: 1.5rem;
-    animation: fadeSlideDown 1s ease-in-out forwards;
-}
-
-.hero-logo-text h1 {
-    font-size: 2.5rem;
-    margin: 0;
-    font-weight: bold;
-}
-
-.hero-subtitle {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-    opacity: 0.9;
-    animation: slideInUp 1s ease-out 0.3s both;
-}
-
-.hero-description {
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    opacity: 0.8;
 }
 
 /* Intro Section */
@@ -730,115 +734,6 @@ footer .container > p { /* Dirige el párrafo directamente dentro del contenedor
 }
 
 /* Ajustes responsivos para pantallas más pequeñas (opcional, pero recomendado) */
-@media (max-width: 768px) {
-    .footer-content {
-        /* En pantallas más pequeñas, apila las secciones en una sola columna */
-        grid-template-columns: 1fr;
-        /* Asegura que ocupe el 100% del ancho disponible en móvil */
-        max-width: 100%; /* Asegura que ocupe el ancho completo del contenedor en móvil */
-        text-align: center; /* Centra el contenido en las secciones apiladas si se desea */
-    }
-
-    .footer-section {
-        text-align: center; /* Centra el contenido dentro de cada sección cuando están apiladas */
-        padding: 0; /* Elimina el padding horizontal extra en móvil si no es necesario */
-    }
-}
-
-/* Floating Contact Button */
-.float-contacto {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #0E4D92;
-    color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    z-index: 1000;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.5s ease-in-out;
-    animation: pulseEffect 2s infinite;
-}
-
-.float-contacto:hover {
-    background: #e0e0e0;
-    transform: scale(1.1);
-}
-
-.float-contacto:hover svg path {
-    fill: #0E4D92;
-}
-
-/* Eliminar efectos bokeh */
-.bokeh {
-    display: none !important;
-}
-
-.hero::before {
-    display: none !important;
-}
-
-/* Imagen de fondo del index.html */
-.hero {
-    background: linear-gradient(
-        135deg,
-        rgba(14, 77, 146, 0.50) 0%,
-        rgba(26, 91, 168, 0.50) 100%
-    ),
-    url('index-page.jpeg') center/cover no-repeat;
-}
-
-/* Animations */
-@keyframes float {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-10px) rotate(2deg); }
-}
-
-@keyframes slideInDown {
-    from { opacity: 0; transform: translateY(-50px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeSlideDown {
-    0% { opacity: 0; transform: translateY(-20px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
-
-@keyframes pulseEffect {
-    0% { box-shadow: 0 0 0 0 rgba(14, 77, 146, 0.7); }
-    70% { box-shadow: 0 0 0 15px rgba(14, 77, 146, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(14, 77, 146, 0); }
-}
-
-/* Fade In Animation */
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s ease-out;
-}
-
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Mobile Responsiveness */
 @media (max-width: 768px) {
     .logo img {
         height: 35px;
