@@ -1,9 +1,4 @@
-/* Estilos CSS específicos para la página Nosotros (nosotros.css) */
-
 .hero {
-    /* Gradiente azul consistente con style.css, y la imagen de fondo específica de nosotros-page.jpg */
     background: linear-gradient(rgba(14, 77, 146, 0.6), rgba(26, 91, 168, 0.6)), 
                 url('contacto-page.jpg') center/cover no-repeat;
-    background-size: cover; /* Asegura que la imagen cubra todo el espacio */
-    background-position: center; /* Centra la imagen */
 }
